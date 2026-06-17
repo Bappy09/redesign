@@ -83,9 +83,12 @@ for (const s of shots) {
   // Force all scroll-reveal items to their visible end-state so a no-scroll
   // full-page capture matches what a scrolling user actually sees.
   await send("Runtime.evaluate", {
-    expression: "document.querySelectorAll('.reveal').forEach(function(e){e.style.transitionDelay='0s';e.classList.add('is-visible');});",
+    expression: "document.querySelectorAll('[data-anim]').forEach(function(e){e.style.transitionDelay='0s';e.classList.add('in');});" +
+      "document.querySelectorAll('[data-count]').forEach(function(e){e.textContent=e.getAttribute('data-count')+(e.getAttribute('data-suffix')||'');});" +
+      "document.querySelectorAll('.jstep').forEach(function(e){e.classList.add('lit');});" +
+      "var jf=document.getElementById('journeyFill'); if(jf) jf.style.width='100%';",
   });
-  await sleep(900);
+  await sleep(1000);
   const { result } = await send("Runtime.evaluate", {
     expression: "document.documentElement.scrollWidth + 'x' + document.documentElement.scrollHeight + ' vw=' + document.documentElement.clientWidth",
     returnByValue: true,

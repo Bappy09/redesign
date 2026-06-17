@@ -63,3 +63,15 @@ sites — by treating Chambers like a boutique advisory brand and surfacing its 
 - Process: Initial Meeting → Planning → Action → Review
 - Values: Honesty & Integrity, Transparency, Independence, Expert Advice, Personal Approach,
   Competitive Pricing
+
+## v2 update — direction change
+
+The first build was a calm "editorial / private-wealth" concept. On review it read as too safe.
+The site was rebuilt in a **modern fintech landing-page** language, benchmarked against
+award-winning finance/SaaS sites: bold display type (Space Grotesk), floating glass "live plan"
+cards, an animated gradient mesh, a scroll-driven user-journey timeline, count-up stats, a moving
+marquee, 3D-tilt cards, magnetic buttons and parallax — all vanilla JS, with a full
+`prefers-reduced-motion` fallback. The brand stays Chambers blue (no green), all facts stay real,
+and every colour pair was re-verified for WCAG AA (the bright-cyan CTA uses navy text at 8.1:1).
+The page is now structured as a single narrative that funnels to one action: book the free
+consultation. See `README.md` for the full change list and motion inventory.

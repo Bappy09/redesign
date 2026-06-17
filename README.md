@@ -8,17 +8,35 @@ The live build is in [`/dist`](dist) — plain HTML, CSS and vanilla JS, no buil
 
 ---
 
-## What I changed (and why)
+## Design direction (v2)
+
+A modern **fintech landing-page** aesthetic — bold display type, floating "live data" glass
+cards, animated gradient mesh, a scroll-driven user journey, and a strong visual hierarchy that
+guides the eye down the page. Kept Chambers' real brand blue (refined azure → navy, no green) and
+all real business facts.
 
 | # | Change | Why |
 |---|--------|-----|
-| 1 | **One clear primary action everywhere** — sticky "Book a consultation" in the header, a persistent mobile call/book bar, and a "£0 first consultation" trust card. | The original split attention between "Get in Touch" and "Book your free consultation" and hid the phone number. Finance sites convert on one obvious next step. |
-| 2 | **Trust surfaced above the fold** — Independent · FCA regulated · 10+ years, plus a regulation strip (FCA ref, ValidPath, company no.). | Regulation and independence are the deciding factors for an advice client; they were buried before. |
-| 3 | **Editorial "private-wealth" design** — Fraunces serif headlines + Inter body, generous whitespace, restrained azure→navy gradient on a near-white canvas. | Lifts the brand above typical template-y IFA competitors; signals calm competence. |
-| 4 | **Depth added to thin content** — service cards, a 4-step process timeline, three client personas, an FAQ, and a values list. | The original pages were one-liners; this builds confidence without inventing facts. |
-| 5 | **Fully responsive** — tested at 375 / 768 / 1280px (real device emulation, full-page). | Mobile-first; hamburger nav, single-column stacking, sticky CTA. |
-| 6 | **Accessibility** — semantic landmarks, skip link, keyboard-operable nav/FAQ, alt text, visible focus rings, `prefers-reduced-motion`, and **WCAG AA contrast verified** (button gradient darkened so white text passes ≥4.5:1). |
-| 7 | **Performance** — ~81 KB total, no framework, SVG visuals, deferred JS, `font-display: swap`. Should comfortably score Lighthouse 90+. |
+| 1 | **A clear user journey, top to bottom** — Hook (hero) → proof (stats) → who we help → what we do → *How it works* (animated 4-step timeline) → about → testimonials → FAQ → one big CTA. | The page now tells a story and funnels every section toward one action: **book the free consultation**. |
+| 2 | **Bold, confident type** — Space Grotesk display + Inter body, large clamp scale, gradient-accented keywords. | The first draft read "calm corporate"; this matches award-winning fintech energy while staying trustworthy. |
+| 3 | **Floating glass "plan" cards** in the hero (retirement projection, £0 first meeting, independent ring) — clearly tagged *Illustrative*. | The reference sites lead with tangible product UI; this gives Chambers the same instant "I get it" hook without faking client data. |
+| 4 | **Trust surfaced everywhere** — hero checklist, a moving marquee of differentiators, an animated stats band (10+ yrs, 100% independent, 6 services, £0), and full FCA/ValidPath detail. | Regulation + independence win finance clients; they were buried on the original. |
+| 5 | **Fully responsive** — verified at 375 / 768 / 1280px via real device emulation, full-page, **zero horizontal overflow**. | Mobile-first; hamburger nav, single-column stacking, persistent call/book bar. |
+| 6 | **Accessibility** — semantic landmarks, skip link, keyboard-operable nav/FAQ, alt text, visible focus rings, full `prefers-reduced-motion` fallback, and **every text/background pair verified WCAG AA** (the bright-cyan CTA uses navy text at 8.1:1). |
+| 7 | **Performance** — ~90 KB total, no framework/library, SVG visuals, deferred JS, GPU-friendly transforms, `font-display: swap`. Targets Lighthouse 90+. |
+
+## Animation & motion (high-end, all vanilla JS)
+
+- **Gradient mesh** with slow-drifting blobs behind the hero, journey and CTA sections
+- **Floating glass cards** with idle bob + **group parallax** that follows the pointer and scroll
+- **3D tilt** on persona/service cards (pointer-reactive, desktop only)
+- **Magnetic** primary buttons
+- **Count-up** stats that animate when scrolled into view
+- **Scroll-driven journey timeline** — a progress rail fills and each step lights up as you scroll
+- **Staggered reveal-on-scroll** for every section (IntersectionObserver)
+- **Infinite marquee** of differentiators; **scroll-progress bar** at the very top
+- Animated SVG (chart line draw, progress ring)
+- Everything collapses to a static, fully legible layout under `prefers-reduced-motion`
 
 ## What was preserved (real business info — nothing invented)
 
@@ -68,7 +86,7 @@ The `dist` folder is self-contained and uses relative paths only.
 - **Cloudflare Pages:** create a project → upload assets → select `dist`.
 - **GitHub Pages:** push `dist` contents to a `gh-pages` branch / `docs` folder.
 
-The only external request is Google Fonts (Fraunces + Inter). Everything else is local.
+The only external request is Google Fonts (Space Grotesk + Inter). Everything else is local.
 To make the site 100% offline/self-hosted, download those two font families into
 `dist/assets/fonts/` and swap the `<link>` in `index.html` for a local `@font-face` block.
 

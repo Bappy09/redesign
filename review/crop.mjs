@@ -13,15 +13,16 @@ const{targetId}=await b("Target.createTarget",{url:"about:blank"});const{session
 const send=(m,p)=>b(m,p,sessionId);
 await send("Page.enable",{});await send("Runtime.enable",{});
 const crops=[
- {name:"crop-desk-hero",w:1280,h:820,mobile:false,y:0},
- {name:"crop-desk-about",w:1280,h:820,mobile:false,y:3050},
- {name:"crop-desk-contact",w:1280,h:900,mobile:false,y:5500},
- {name:"crop-mob-hero",w:375,h:760,mobile:true,y:0},
+ {name:"c-hero",w:1280,h:840,mobile:false,y:0},
+ {name:"c-journey",w:1280,h:900,mobile:false,y:3650},
+ {name:"c-about",w:1280,h:860,mobile:false,y:4600},
+ {name:"c-cta",w:1280,h:900,mobile:false,y:6300},
+ {name:"c-mob-hero",w:375,h:780,mobile:true,y:0},
 ];
 for(const c of crops){
  await send("Emulation.setDeviceMetricsOverride",{width:c.w,height:c.h,deviceScaleFactor:1,mobile:c.mobile,screenWidth:c.w,screenHeight:c.h});
  await send("Page.navigate",{url:URL});await sleep(1500);
- await send("Runtime.evaluate",{expression:"document.querySelectorAll('.reveal').forEach(e=>{e.style.transitionDelay='0s';e.classList.add('is-visible')});window.scrollTo(0,"+c.y+");"});
+ await send("Runtime.evaluate",{expression:"document.querySelectorAll('[data-anim]').forEach(e=>{e.style.transitionDelay='0s';e.classList.add('in')});document.querySelectorAll('[data-count]').forEach(e=>{e.textContent=e.getAttribute('data-count')+(e.getAttribute('data-suffix')||'')});document.querySelectorAll('.jstep').forEach(e=>e.classList.add('lit'));var jf=document.getElementById('journeyFill');if(jf)jf.style.width='66%';window.scrollTo(0,"+c.y+");"});
  await sleep(700);
  const shot=await send("Page.captureScreenshot",{format:"png",fromSurface:true});
  writeFileSync(`${OUT}/${c.name}.png`,Buffer.from(shot.data,"base64"));
