@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" role="img" aria-label="Client avatar placeholder">
+  <defs>
+    <linearGradient id="a" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1F7FD0"/><stop offset="1" stop-color="#5BE8FF"/>
+    </linearGradient>
+    <clipPath id="c"><circle cx="40" cy="40" r="40"/></clipPath>
+  </defs>
+  <g clip-path="url(#c)">
+    <rect width="80" height="80" fill="url(#a)"/>
+    <circle cx="40" cy="32" r="15" fill="#ffffff" opacity=".92"/>
+    <path d="M14 78 C14 56 28 50 40 50 C52 50 66 56 66 78 Z" fill="#ffffff" opacity=".92"/>
+  </g>
+</svg>

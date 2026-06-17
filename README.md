@@ -50,11 +50,27 @@ all real business facts.
 - The 6 services, 3 client personas, 4-step process and 6 values from the live site
 - The original **logo** (`dist/assets/img/logo.png`, converted from the supplied `.avif`)
 
+## Imagery
+
+All artwork is **original, hand-coded SVG** (no stock photos, no external image services, nothing
+fabricated about a real person):
+
+- `assets/img/advisor.svg` — a flat **illustration** of an adviser, used as the hero figure (with
+  floating glass cards around it, like the reference sites) and in the About section. It is clearly
+  captioned *“Illustration · replace with Michael’s photo”* so it never misrepresents a real photo.
+- `assets/img/avatar.svg` — gradient avatar used on the testimonial cards.
+- `assets/img/favicon.svg`, `og.svg` — brand mark + social card.
+- `assets/img/logo.png` — the real Chambers logo (converted from the supplied `.avif`).
+
+> Why illustration and not a photo: I can't fabricate a realistic photo of a real, named individual,
+> and there's no image-generation service in this build. Swap `advisor.svg` for Michael's real
+> headshot when available — the markup already sizes it.
+
 ## Marked `[PLACEHOLDER]` (do not ship without real content)
 
+- **Adviser photo** — the SVG illustration stands in; replace with Michael's real headshot.
 - **Testimonials** — none exist on the current site, so three slots are clearly marked rather
   than faked. Replace with genuine, permissioned quotes (or embed Google / VouchedFor reviews).
-- **Adviser photo** — a monogram stands in for Michael's portrait.
 - **Email address** — the site lists none; the contact link is a placeholder.
 - A couple of FAQ answers flag details to confirm (fee minimums, remote meetings).
 
