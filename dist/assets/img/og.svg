@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0F1B33"/>
+      <stop offset="1" stop-color="#1E3055"/>
+    </linearGradient>
+    <linearGradient id="mk" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#1763B6"/>
+      <stop offset="1" stop-color="#3FB8F0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1080" cy="90" r="320" fill="#3FB8F0" opacity="0.12"/>
+  <g transform="translate(96,150)" fill="url(#mk)">
+    <path d="M0 120 L40 40 L68 40 L28 120 Z"/>
+    <path d="M48 120 L88 40 L116 40 L76 120 Z"/>
+    <path d="M96 120 L136 40 L164 40 L124 120 Z"/>
+  </g>
+  <text x="96" y="350" font-family="Georgia, serif" font-size="78" fill="#ffffff" font-weight="600">Chambers Financial</text>
+  <text x="98" y="410" font-family="Inter, Arial, sans-serif" font-size="30" letter-spacing="2" fill="#9fc6e8">A HOLISTIC APPROACH TO FINANCIAL ADVICE</text>
+  <text x="96" y="510" font-family="Inter, Arial, sans-serif" font-size="28" fill="#c4d4e8">Independent financial planning · Rye, East Sussex</text>
+</svg>

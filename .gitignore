@@ -1,0 +1,14 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node
+node_modules/
+
+# Vercel
+.vercel/
+
+# Local screenshot capture profiles (kept screenshots, dropped temp profiles)
+review/.cdp-profile/
+review/.cdp2/
